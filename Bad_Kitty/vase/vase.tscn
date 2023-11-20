@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2sqkdimj8x04"]
+
+[ext_resource type="Texture2D" uid="uid://h2pimq0qdj8r" path="res://vase/Vase.png" id="1_8f01f"]
+[ext_resource type="Script" path="res://vase/vase.gd" id="1_nfbpo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8h7bu"]
+atlas = ExtResource("1_8f01f")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nqhl"]
+atlas = ExtResource("1_8f01f")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_74dar"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8h7bu")
+}],
+"loop": true,
+"name": &"broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nqhl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rye68"]
+size = Vector2(9, 13)
+
+[node name="Vase" type="Area2D" groups=["Destructibles"]]
+script = ExtResource("1_nfbpo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_74dar")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 0.5)
+shape = SubResource("RectangleShape2D_rye68")
