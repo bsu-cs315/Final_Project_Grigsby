@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://clfyk8p548pid"]
+
+[ext_resource type="Script" path="res://menu/credits.gd" id="1_qhibv"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qhibv")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 89.0
+offset_right = 810.0
+offset_bottom = 115.0
+text = "Pawsome Vibes: Get Your Groove On with ‘Meow Meow' By kjartan_abel"
+
+[node name="LinkButton" type="LinkButton" parent="."]
+layout_mode = 0
+offset_left = 820.0
+offset_top = 89.0
+offset_right = 878.0
+offset_bottom = 129.0
+text = "License"
+uri = "https://creativecommons.org/licenses/by/4.0/"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 426.0
+offset_right = 661.0
+offset_bottom = 457.0
+text = "Return to Main Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

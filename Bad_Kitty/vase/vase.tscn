@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2sqkdimj8x04"]
+[gd_scene load_steps=9 format=3 uid="uid://d2sqkdimj8x04"]
 
 [ext_resource type="Texture2D" uid="uid://h2pimq0qdj8r" path="res://vase/Vase.png" id="1_8f01f"]
 [ext_resource type="Script" path="res://vase/vase.gd" id="1_nfbpo"]
+[ext_resource type="AudioStream" uid="uid://bb88eb87iu57y" path="res://vase/explosion.wav" id="3_bauto"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8h7bu"]
 atlas = ExtResource("1_8f01f")
@@ -33,13 +34,35 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rye68"]
 size = Vector2(9, 13)
 
-[node name="Vase" type="Area2D" groups=["Destructibles"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxore"]
+size = Vector2(9, 5)
+
+[node name="Vase" type="CharacterBody2D" groups=["Destructibles"]]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_nfbpo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_74dar")
 animation = &"idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="NormalCollision" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, 0.5)
 shape = SubResource("RectangleShape2D_rye68")
+
+[node name="BrokenCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 0.5)
+shape = SubResource("RectangleShape2D_uxore")
+disabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.35
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bauto")
+
+[node name="EndingTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="EndingTimer" to="." method="_on_ending_timer_timeout"]
