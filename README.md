@@ -5,6 +5,7 @@ Press LEFT/RIGHT to move
 <br>Press SHIFT to attack
 <br>You can only attack when not moving
 ## Third-Party Assets
+[Pawsome Vibes: Get Your Groove On with ‘Meow Meow' By kjartan_abel from Freesound](https://freesound.org/people/kjartan_abel/sounds/679355/)
 ## Project Report
 ### Reflection
 Getting the first iteration of my project done was a pain.  Getting sick completely threw off my schedule, and I fell behind in multiple classes.  I did eventually manage to get everything working, though.  The cat's main collision is on layer one with the collision for the surfaces.  Meanwhile, the cat's attack collision and the vase are on layer 2.  This makes it so that the cat's paw only interacts with destructible objects.  The hardest part of this iteration was getting the attack to function properly.  However, once I knew how to make it work, I was able to finish everything else very quickly.  I should get an A unless I get points off for submitting late by multiple weeks.
@@ -13,11 +14,11 @@ Getting the first iteration of my project done was a pain.  Getting sick complet
 - [X] D-2: The project content is eligible for an <a href="https://www.esrb.org/ratings-guide/">ESRB Rating</a> of M or less.
 - [X] C-1: Your repository is well-formed, in our course organization, with an appropriate <code>.gitignore</code> file, no unnecessary files tracked, a single mainline branch named <code>main</code> or <code>master</code>, and all commit messages following <a href="https://cbea.ms/git-commit/">our commit message style guide</a>.
 - [X] C-2: Your release is tagged using <a href="https://semver.org/">semantic versioning</a> where the major version is zero, the minor version is the iteration number, the patch version is incremented as usual for each change made to the minor version, and the release name matches the release tag.
-- [ ] C-3: You have a clear legal right to use all incorporated assets, the licenses for all third-party assets are tracked in the <code>README.md</code> file, and you have satisfied all license requirements.
+- [X] C-3: You have a clear legal right to use all incorporated assets, the licenses for all third-party assets are tracked in the <code>README.md</code> file, and you have satisfied all license requirements.
 - [X] C-4: Either the <code>README.md</code> contains instructions for how to play the game or such instructions are incorporated into the game.
 - [X] C-5: The release demonstrates the core gameplay loop: the player can take actions that move them toward a goal.
-- [ ] B-1: The project report is complete.
-- [ ] B-2: The game includes sound effects (imported from .wav files) and looping music (imported from .ogg files).
+- [X] B-1: The project report is complete.
+- [X] B-2: The game includes sound effects (imported from .wav files) and looping music (imported from .ogg files).
 - [X] B-3: The game runs without errors or warnings.
 - [X] B-4: The source code and project structure comply with our adopted style guides.
 - [X] B-5: Clear progress has been made on the game with respect to the project plan.
