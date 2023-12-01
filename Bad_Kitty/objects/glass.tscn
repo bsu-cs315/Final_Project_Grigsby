@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://c1e2m7dwmiwbk"]
+
+[ext_resource type="Texture2D" uid="uid://dwxf3sdhw33jr" path="res://objects/glass.png" id="1_cnrbf"]
+[ext_resource type="Script" path="res://objects/glass.gd" id="1_dws01"]
+[ext_resource type="AudioStream" uid="uid://bb88eb87iu57y" path="res://objects/explosion.wav" id="3_qe075"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sthup"]
+atlas = ExtResource("1_cnrbf")
+region = Rect2(0, 33, 32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76gle"]
+atlas = ExtResource("1_cnrbf")
+region = Rect2(0, 2, 32, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j1hbg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sthup")
+}],
+"loop": true,
+"name": &"broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76gle")
+}],
+"loop": true,
+"name": &"unbroken",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2to0t"]
+size = Vector2(24, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2ash"]
+size = Vector2(17, 6)
+
+[node name="Glass" type="CharacterBody2D"]
+collision_layer = 6
+collision_mask = 6
+script = ExtResource("1_dws01")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_j1hbg")
+animation = &"unbroken"
+
+[node name="NormalCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2to0t")
+
+[node name="BrokenCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 12)
+shape = SubResource("RectangleShape2D_o2ash")
+disabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qe075")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

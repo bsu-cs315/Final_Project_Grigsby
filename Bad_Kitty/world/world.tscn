@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://byliv717ogc01"]
+[gd_scene load_steps=22 format=3 uid="uid://byliv717ogc01"]
 
 [ext_resource type="Script" path="res://world/world.gd" id="1_7xp5k"]
 [ext_resource type="Texture2D" uid="uid://boy1lxbefuv82" path="res://world/Table-Left.png.png" id="1_ns8dl"]
@@ -6,8 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://c81edlnsqgmpd" path="res://world/Table-Right.png.png" id="3_baydr"]
 [ext_resource type="PackedScene" uid="uid://qe2l8dm5n50k" path="res://cat/cat.tscn" id="4_8obvt"]
 [ext_resource type="Texture2D" uid="uid://ctxrh2482b3s5" path="res://world/Floor.png" id="4_lrmph"]
-[ext_resource type="PackedScene" uid="uid://d2sqkdimj8x04" path="res://vase/vase.tscn" id="6_28kss"]
+[ext_resource type="PackedScene" uid="uid://d2sqkdimj8x04" path="res://objects/vase.tscn" id="6_hjoac"]
+[ext_resource type="Texture2D" uid="uid://crpbb3hvtviod" path="res://world/wood_floor.png" id="6_sgvgn"]
+[ext_resource type="Texture2D" uid="uid://bkrlykmacunbl" path="res://world/kitchen_counter.png" id="7_oan6r"]
+[ext_resource type="Texture2D" uid="uid://ccsp70uquyyxp" path="res://world/faucet.png" id="8_82dwj"]
 [ext_resource type="AudioStream" uid="uid://dgw7k1juixqqv" path="res://world/679355__kjartan_abel__pawsome-vibes-get-your-groove-on-with-meow-meow.wav" id="8_vc03h"]
+[ext_resource type="PackedScene" uid="uid://cm86u7cp0p15h" path="res://objects/couch.tscn" id="9_kbvk4"]
+[ext_resource type="PackedScene" uid="uid://c1e2m7dwmiwbk" path="res://objects/glass.tscn" id="11_8rprm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_67pi4"]
 texture = ExtResource("1_ns8dl")
@@ -42,14 +47,42 @@ texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.8125, -16, 16.6875, -16, 17.1875, -13.5, -16.3125, -13.25)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.1875, -15.875, -16.1875, -13.75, 16.1875, -13.625, 16.1875, -15.875)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m6dhv"]
+texture = ExtResource("6_sgvgn")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.1875, -15.875, -16.1875, -13.75, 16.1875, -13.625, 16.1875, -15.875)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pt0ux"]
+texture = ExtResource("7_oan6r")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.1875, -15.875, -16.1875, -13.75, 16.1875, -13.625, 16.1875, -15.875)
+0:0/0/physics_layer_0/polygon_0/one_way = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6o0yt"]
+texture = ExtResource("8_82dwj")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_kj5t6"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 5
+physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_67pi4")
 sources/1 = SubResource("TileSetAtlasSource_aflwf")
 sources/2 = SubResource("TileSetAtlasSource_kjsiv")
 sources/3 = SubResource("TileSetAtlasSource_7j7ek")
+sources/5 = SubResource("TileSetAtlasSource_m6dhv")
+sources/6 = SubResource("TileSetAtlasSource_pt0ux")
+sources/7 = SubResource("TileSetAtlasSource_6o0yt")
 
 [node name="World" type="Node2D"]
 position = Vector2(-39, 67)
@@ -60,17 +93,26 @@ position = Vector2(257, -431)
 scale = Vector2(5, 5)
 tile_set = SubResource("TileSet_kj5t6")
 format = 2
-layer_0/tile_data = PackedInt32Array(917501, 3, 0, 917503, 3, 0, 851969, 3, 0, 851971, 3, 0, 851973, 3, 0, 851975, 3, 0, 851977, 3, 0, 851979, 3, 0, 720903, 2, 0, 720901, 1, 0, 720899, 0, 0)
+layer_0/tile_data = PackedInt32Array(720903, 2, 0, 720901, 1, 0, 720899, 0, 0, 851981, 3, 0, 851983, 3, 0, 851985, 3, 0, 851987, 3, 0, 851989, 3, 0, 851991, 3, 0, 851993, 3, 0, 917501, 5, 0, 851973, 5, 0, 851975, 5, 0, 851977, 5, 0, 851979, 5, 0, 851971, 5, 0, 851969, 5, 0, 917503, 5, 0, 720913, 6, 0, 720915, 6, 0, 720917, 6, 0, 720919, 6, 0, 720921, 6, 0, 589847, 7, 0)
+
+[node name="Couch" parent="." instance=ExtResource("9_kbvk4")]
+position = Vector2(199, 414)
+
+[node name="Vase" parent="." instance=ExtResource("6_hjoac")]
+position = Vector2(831, 454)
+scale = Vector2(3.5, 3.5)
+
+[node name="Glass" parent="." instance=ExtResource("11_8rprm")]
+position = Vector2(2041, 393)
+
+[node name="Glass2" parent="." instance=ExtResource("11_8rprm")]
+position = Vector2(2006, 393)
 
 [node name="Cat" parent="." instance=ExtResource("4_8obvt")]
 position = Vector2(574, 441)
 
 [node name="Camera2D" type="Camera2D" parent="Cat"]
 position = Vector2(8, -37)
-
-[node name="Vase" parent="." instance=ExtResource("6_28kss")]
-position = Vector2(862, 449)
-scale = Vector2(4, 4)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_vc03h")

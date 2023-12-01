@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://cm86u7cp0p15h"]
+
+[ext_resource type="Texture2D" uid="uid://dfr4y3pl53vst" path="res://objects/Couch.png" id="1_sk1xn"]
+[ext_resource type="Script" path="res://objects/couch.gd" id="1_sn71t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyr87"]
+atlas = ExtResource("1_sk1xn")
+region = Rect2(0, 1, 32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6541"]
+atlas = ExtResource("1_sk1xn")
+region = Rect2(0, 33, 32, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wpmol"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyr87")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6541")
+}],
+"loop": true,
+"name": &"scratched",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcno3"]
+size = Vector2(105, 47)
+
+[node name="Couch" type="Area2D"]
+scale = Vector2(2, 2)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_sn71t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_wpmol")
+animation = &"normal"
+
+[node name="ScratchCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-27.5, 55.5)
+shape = SubResource("RectangleShape2D_lcno3")

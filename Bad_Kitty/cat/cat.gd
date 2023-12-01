@@ -1,7 +1,7 @@
 class_name Cat
 extends CharacterBody2D
 
-const JUMP_VELOCITY = -500.0
+const JUMP_VELOCITY = -600.0
 const SPEED = 300.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -50,3 +50,7 @@ func _on_area_2d_body_entered(body):
 
 func _on_timer_timeout():
 	$Area2D/Whack_collision.disabled = true
+
+
+func _on_area_2d_area_entered(area):
+	area.knock_over()
