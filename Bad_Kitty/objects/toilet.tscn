@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgw6spc3hvyea"]
+
+[ext_resource type="Texture2D" uid="uid://cv8lgl3bfnwf4" path="res://objects/toilet.png" id="1_ans2l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7vf3"]
+size = Vector2(80, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bx6ry"]
+size = Vector2(40, 20)
+
+[node name="Toilet" type="CharacterBody2D"]
+scale = Vector2(1.25, 1.25)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(10, 10)
+texture = ExtResource("1_ans2l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-80, -33)
+shape = SubResource("RectangleShape2D_w7vf3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-139, -102)
+shape = SubResource("RectangleShape2D_bx6ry")

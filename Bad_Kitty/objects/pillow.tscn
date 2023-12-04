@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://7gb2l058vm6"]
+
+[ext_resource type="Script" path="res://objects/pillow.gd" id="1_2rxss"]
+[ext_resource type="Texture2D" uid="uid://cw8p3gsivnxmq" path="res://objects/pillow.png" id="1_ic5bn"]
+[ext_resource type="AudioStream" uid="uid://ckjqxbpcifywy" path="res://objects/explosion2.wav" id="3_8qfwa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nv2f4"]
+atlas = ExtResource("1_ic5bn")
+region = Rect2(0, 0, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvts2"]
+atlas = ExtResource("1_ic5bn")
+region = Rect2(0, 48, 8, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hjghc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nv2f4")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvts2")
+}],
+"loop": true,
+"name": &"ripped",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yl6qs"]
+size = Vector2(27.6, 28.4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86rpl"]
+size = Vector2(38, 22.4)
+
+[node name="Pillow" type="CharacterBody2D"]
+scale = Vector2(2.5, 2.5)
+collision_layer = 6
+collision_mask = 6
+script = ExtResource("1_2rxss")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_hjghc")
+animation = &"normal"
+
+[node name="NormalCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-6.4, 23.8)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_yl6qs")
+
+[node name="BrokenCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0.2, -15.2)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_86rpl")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8qfwa")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
