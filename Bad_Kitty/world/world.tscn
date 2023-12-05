@@ -48,7 +48,7 @@ texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.6875, -16, -16.6875, -13.875, 15.9375, -13.75, 16.1875, -15.875)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.8125, -15.875, 16.3125, -15.875, 16.3125, -13.75, -16.8125, -13.875)
 0:0/0/physics_layer_0/polygon_0/one_way = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t6t26"]
@@ -64,7 +64,7 @@ texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.875, -31.75, -15.875, -25.25, 16.375, -25.5, 16.375, -32)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.8125, -15.875, 16.3125, -15.875, 16.3125, -13.75, -16.8125, -13.875)
 0:0/0/physics_layer_0/polygon_0/one_way = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gdask"]
@@ -91,7 +91,7 @@ texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.6875, -16, -16.6875, -13.875, 15.9375, -13.75, 16.1875, -15.875)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.8125, -15.875, 16.3125, -15.875, 16.3125, -13.75, -16.8125, -13.875)
 0:0/0/physics_layer_0/polygon_0/one_way = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kjsiv"]
@@ -172,7 +172,7 @@ scale = Vector2(5, 5)
 texture = ExtResource("5_pa7xw")
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(257, -431)
+position = Vector2(257, -427)
 scale = Vector2(4.99773, 4.97423)
 tile_set = SubResource("TileSet_kj5t6")
 format = 2

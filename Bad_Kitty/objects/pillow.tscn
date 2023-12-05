@@ -50,12 +50,10 @@ animation = &"normal"
 
 [node name="NormalCollision" type="CollisionShape2D" parent="."]
 position = Vector2(-6.4, 23.8)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_yl6qs")
 
 [node name="BrokenCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0.2, -15.2)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_86rpl")
 
 [node name="Timer" type="Timer" parent="."]
