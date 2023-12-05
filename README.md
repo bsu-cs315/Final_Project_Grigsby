@@ -8,7 +8,7 @@ Press LEFT/RIGHT to move
 [Pawsome Vibes: Get Your Groove On with ‘Meow Meow' By kjartan_abel from Freesound](https://freesound.org/people/kjartan_abel/sounds/679355/)
 ## Project Report
 ### Reflection
-Getting the first iteration of my project done was a pain.  Getting sick completely threw off my schedule, and I fell behind in multiple classes.  I did eventually manage to get everything working, though.  The cat's main collision is on layer one with the collision for the surfaces.  Meanwhile, the cat's attack collision and the vase are on layer 2.  This makes it so that the cat's paw only interacts with destructible objects.  The hardest part of this iteration was getting the attack to function properly.  However, once I knew how to make it work, I was able to finish everything else very quickly.  I should get an A unless I get points off for submitting late by multiple weeks.
+This was an annoying project to try to complete.  It isn't 100% finished, but it's playable.  I would probably have been able to do more if I hadn't gotten sick last month.  My favorite part was figuring out how to randomize the colors of the bottles in the bathroom.  I also enjoyed making the assets for cupboards and drawers.  I should get an A, barring any issues.
 ### Evaluation
 - [X] D-1: The repository contains a <code>README.md</code> file in its top-level directory on the default branch.
 - [X] D-2: The project content is eligible for an <a href="https://www.esrb.org/ratings-guide/">ESRB Rating</a> of M or less.
@@ -35,7 +35,7 @@ Getting the first iteration of my project done was a pain.  Getting sick complet
 - [ ] ⭐ Incorporate juiciness and document it in the <code>README.md</code>
 - [ ] ⭐ Use particle effects
 - [X] ⭐ Use different layers and masks to manage collisions and document this in the <code>README.md</code>
-- [ ] ⭐ Incorporate pop into your HUD or title screen using <code>Tween</code> or <code>AnimationPlayer</code>
+- [X] ⭐ Incorporate pop into your HUD or title screen using <code>Tween</code> or <code>AnimationPlayer</code>
 - [ ] ⭐ Include an AI-controlled character
 - [ ] ⭐ Add a pause menu that includes, at minimum, the ability to resume or return to the main menu
 - [ ] ⭐ The game is released publicly on <code>itch.io</code>, with all the recommended accompanying text, screenshots, gameplay videos, <i>etc.</i>
