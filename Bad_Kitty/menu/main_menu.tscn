@@ -14,9 +14,9 @@ script = ExtResource("1_rwcrx")
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 365.0
-offset_top = 144.0
+offset_top = -129.0
 offset_right = 450.0
-offset_bottom = 170.0
+offset_bottom = -103.0
 scale = Vector2(5, 5)
 text = "BAD KITTY!"
 

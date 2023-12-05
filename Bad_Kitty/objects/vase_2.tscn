@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://d0qgx5bx2tyai"]
+
+[ext_resource type="Script" path="res://objects/vase_2.gd" id="1_2fm0h"]
+[ext_resource type="Texture2D" uid="uid://b5cvyhaepmvjo" path="res://objects/vase2.png" id="1_n80b7"]
+[ext_resource type="AudioStream" uid="uid://bb88eb87iu57y" path="res://objects/explosion.wav" id="3_7fkab"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fl2f"]
+atlas = ExtResource("1_n80b7")
+region = Rect2(0, 42, 16, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ql02"]
+atlas = ExtResource("1_n80b7")
+region = Rect2(0, 8, 16, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4viad"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fl2f")
+}],
+"loop": true,
+"name": &"broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ql02")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07v37"]
+size = Vector2(4, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sir80"]
+size = Vector2(5, 4)
+
+[node name="Vase2" type="CharacterBody2D"]
+collision_layer = 6
+collision_mask = 6
+script = ExtResource("1_2fm0h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4viad")
+animation = &"normal"
+
+[node name="NormalCollision" type="CollisionShape2D" parent="."]
+position = Vector2(5, -3)
+shape = SubResource("RectangleShape2D_07v37")
+
+[node name="BrokenCollision" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, -7)
+shape = SubResource("RectangleShape2D_sir80")
+disabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7fkab")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

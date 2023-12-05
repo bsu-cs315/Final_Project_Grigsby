@@ -62,7 +62,4 @@ one_shot = true
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_3jpjd")
 
-[node name="EndingTimer" type="Timer" parent="."]
-
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="EndingTimer" to="." method="_on_ending_timer_timeout"]

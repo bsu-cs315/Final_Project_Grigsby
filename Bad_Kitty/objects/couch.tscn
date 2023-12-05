@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cm86u7cp0p15h"]
+[gd_scene load_steps=8 format=3 uid="uid://cm86u7cp0p15h"]
 
 [ext_resource type="Texture2D" uid="uid://dfr4y3pl53vst" path="res://objects/Couch.png" id="1_sk1xn"]
 [ext_resource type="Script" path="res://objects/couch.gd" id="1_sn71t"]
+[ext_resource type="AudioStream" uid="uid://ckjqxbpcifywy" path="res://objects/explosion2.wav" id="3_nlss5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fyr87"]
 atlas = ExtResource("1_sk1xn")
@@ -47,3 +48,6 @@ animation = &"normal"
 [node name="ScratchCollision" type="CollisionShape2D" parent="."]
 position = Vector2(-27.5, 55.5)
 shape = SubResource("RectangleShape2D_lcno3")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_nlss5")

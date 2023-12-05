@@ -5,6 +5,7 @@ const JUMP_VELOCITY = -600.0
 const SPEED = 300.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var items_attacked := 0
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -46,6 +47,9 @@ func _physics_process(delta):
 
 func _on_area_2d_body_entered(body):
 	body.knock_over()
+	items_attacked += 1
+	if items_attacked == 10:
+		get_tree().change_scene_to_file("res://menu/ending.tscn")
 
 
 func _on_timer_timeout():
@@ -54,3 +58,6 @@ func _on_timer_timeout():
 
 func _on_area_2d_area_entered(area):
 	area.knock_over()
+	items_attacked += 1
+	if items_attacked == 10:
+		get_tree().change_scene_to_file("res://menu/ending.tscn")
